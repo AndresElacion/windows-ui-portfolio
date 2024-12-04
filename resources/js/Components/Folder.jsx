@@ -55,7 +55,7 @@ export default function Folder() {
 
             >
                 {/* About Me Button */}
-                <AboutMeFolder handleDragEnd={handleDragEnd} positions={positions} />
+                <AboutMeFolder handleDragEnd={handleDragEnd} positions={positions} handleDragStart={handleDragStart} />
 
                 {/* Projects Button */}
                 <button

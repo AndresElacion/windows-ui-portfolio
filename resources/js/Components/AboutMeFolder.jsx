@@ -1,7 +1,7 @@
 import { useState } from "react"
 import AboutMeModal from '@/Components/AboutMeModal'
 
-export default function AboutMeFolder({ handleDragEnd, positions}) {
+export default function AboutMeFolder({ handleDragEnd, positions, handleDragStart}) {
     const [modalOpen, setModalOpen] = useState({})
 
     const openModal = (item) => {
