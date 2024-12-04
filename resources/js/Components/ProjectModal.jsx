@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import QuickLinks from "./QuickLinks";
 
-export default function AboutMeModal({ title, content, onClose }) {
+export default function ProjectModal({ title, content, onClose }) {
   const [draggedItem, setDraggedItem] = useState(null);
   const [positions, setPositions] = useState({
-    AboutMeModal: {  x: 500, y: 100 },
+    ProjectModal: { x: 500, y: 100 },
   });
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
 
@@ -44,11 +44,11 @@ export default function AboutMeModal({ title, content, onClose }) {
       <div
         className="absolute"
         draggable="true"
-        onDragStart={(e) => handleDragStart(e, "AboutMeModal")}
+        onDragStart={(e) => handleDragStart(e, "ProjectModal")}
         onDragEnd={handleDragEnd}
         style={{
-          top: `${positions["AboutMeModal"].y}px`,
-          left: `${positions["AboutMeModal"].x}px`,
+          top: `${positions["ProjectModal"].y}px`,
+          left: `${positions["ProjectModal"].x}px`,
           width: "1000px", // Set a fixed width
         }}
       >
