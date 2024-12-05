@@ -15,7 +15,7 @@ export default function ContactBrowser({ handleDragEnd, positions, handleDragSta
     return (
         <>
             <button
-                    class="absolute flex flex-col items-center text-white border-2 border-transparent hover:border-gray-500 hover:bg-slate-100 hover:bg-opacity-25 transition"
+                    className="absolute flex flex-col items-center text-white border-2 border-transparent hover:border-gray-500 hover:bg-slate-100 hover:bg-opacity-25 transition"
                     draggable="true"
                     onDragStart={(e) => handleDragStart(e, 'Contact')}
                     onClick={() => openModal('Contact')}
@@ -28,7 +28,7 @@ export default function ContactBrowser({ handleDragEnd, positions, handleDragSta
                 <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 64 64" 
-                    class="w-16 h-12 group-hover:scale-105 transition-transform duration-300"
+                    className="w-16 h-12 group-hover:scale-105 transition-transform duration-300"
                 >
                     {/* Background Bubble */} 
                     <path 
@@ -41,7 +41,7 @@ export default function ContactBrowser({ handleDragEnd, positions, handleDragSta
                     <circle cx="40" cy="24" r="3" fill="#34A853" />
                     <rect x="24" y="30" width="16" height="4" rx="2" fill="#F4B400" />
                 </svg>
-                <span class="mt-2 text-sm font-semibold">Contact Me</span>
+                <span className="mt-2 text-sm font-semibold">Contact Me</span>
             </button>
 
             {/* Render modals */}
