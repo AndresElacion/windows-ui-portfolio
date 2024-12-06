@@ -7,7 +7,7 @@ export default function Welcome() {
 
     return (
         <ZIndexProvider>
-            <div className='bg-gradient-to-r from-blue-400 to-blue-800'>
+            <div className='bg-gradient-to-r from-gray-800/80 to-black'>
                 <Head title="Welcome" />
                 <Folder />
                 <TaskBar />
