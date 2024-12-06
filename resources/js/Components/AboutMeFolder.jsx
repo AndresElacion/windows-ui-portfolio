@@ -25,40 +25,30 @@ export default function AboutMeFolder({ handleDragEnd, positions, handleDragStar
                     left: `${positions['About Me'].x}px`,
                 }}
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 64 64"
-                    className="w-16 h-12 group-hover:scale-105 transition-transform duration-300"
-                >
-                    {/* Folder Base */}
-                    <rect x="4" y="20" width="56" height="36" rx="4" fill="#FFD966" />
-                    <path
-                        d="M60 24H4v28a4 4 0 0 0 4 4h48a4 4 0 0 0 4-4V24z"
-                        fill="#FFC83D"
-                    />
-                    {/* Folder Tab */}
-                    <path
-                        d="M4 20V16a4 4 0 0 1 4-4h16l4 4h32a4 4 0 0 1 4 4v4H4z"
-                        fill="#F5BF3A"
-                    />
-                    {/* Shadow for Depth */}
-                    <rect x="4" y="36" width="56" height="2" fill="#E3A820" opacity="0.7" />
-                    {/* "About Me" Placeholder Icon */}
-                    <circle cx="32" cy="36" r="8" fill="#F3F3F3" />
-                    <circle cx="32" cy="34" r="3" fill="#A0A0A0" />
-                    <path
-                        d="M28 40c0-2.2 1.8-4 4-4h0c2.2 0 4 1.8 4 4"
-                        stroke="#A0A0A0"
-                        strokeWidth="1.5"
-                        fill="none"
-                    />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="w-16 h-12 group-hover:scale-105 transition-transform duration-300">
+                    {/* <!-- Notepad Icon --> */}
+                    <rect x="56" y="84" width="144" height="144" rx="8" fill="#e2803b" />
+                    <rect x="56" y="70" width="144" height="144" rx="8" fill="#d4d4d4" />
+                    <rect x="56" y="56" width="144" height="144" rx="8" fill="#28a1f5" />
+                    <rect x="56" y="70" width="144" height="8" rx="3" fill="#0262a4" />
+                    <rect x="56" y="100" width="144" height="8" rx="3" fill="#0262a4" />
+                    <rect x="56" y="120" width="144" height="8" rx="3" fill="#0262a4" />
+                    <rect x="56" y="140" width="144" height="8" rx="3" fill="#0262a4" />
+                    <rect x="56" y="160" width="144" height="8" rx="3" fill="#0262a4" />
+
+                    {/* <!-- Spiral Binding --> */}
+                    <circle cx="75" cy="65" r="8" fill="#070078" />
+                    <circle cx="100" cy="65" r="8" fill="#070078" />
+                    <circle cx="125" cy="65" r="8" fill="#070078" />
+                    <circle cx="155" cy="65" r="8" fill="#070078" />
+                    <circle cx="185" cy="65" r="8" fill="#070078" />
                 </svg>
                 <span className="mt-2 text-sm font-semibold">About Me</span>
             </button>
 
             {/* Render modals */}
             {modalOpen['About Me'] && (
-                <AboutMeModal title="About Me" content="Here is some information about me." onClose={() => closeModal('About Me')} />
+                <AboutMeModal title="About Me" onClose={() => closeModal('About Me')} />
             )}
         </>
     )
