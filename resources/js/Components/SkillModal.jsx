@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import QuickLinks from "./QuickLinks";
 
+import { useZIndex} from './ZInxdexProvider'
+
 export default function SkillModal({ title, content, onClose }) {
   const [draggedItem, setDraggedItem] = useState(null);
   const [positions, setPositions] = useState({
     SkillModal: { x: 500, y: 100 },
   });
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+    const { incrementZIndex } = useZIndex()
+    const [localZIndex, setLocalZIndex] = useState(1);
 
   const handleDragStart = (e, itemName) => {
     setDraggedItem(itemName);
@@ -35,21 +39,30 @@ export default function SkillModal({ title, content, onClose }) {
     e.preventDefault();
   };
 
+  const handleClick = () => {
+      const newZIndex = incrementZIndex(); // Increment global zIndex
+      setLocalZIndex(newZIndex); // Set local zIndex for this modal
+      console.log("Current about ZIndex:", newZIndex);
+  }
+
   return (
     <div
       className="absolute inset-0"
       onDrop={handleDrop}
       onDragOver={handleDragOver}
+      onClick={handleClick}
     >
       <div
         className="absolute"
         draggable="true"
         onDragStart={(e) => handleDragStart(e, "SkillModal")}
         onDragEnd={handleDragEnd}
+        onClick={incrementZIndex}
         style={{
           top: `${positions["SkillModal"].y}px`,
           left: `${positions["SkillModal"].x}px`,
           width: "1000px", // Set a fixed width
+          zIndex: localZIndex
         }}
       >
         <div className="bg-white rounded-2xl shadow-xl h-3/4 border border-gray-300 flex flex-col">
