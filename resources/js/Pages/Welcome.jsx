@@ -11,8 +11,6 @@ export default function Welcome() {
                 <Head title="Welcome" />
                 <Folder />
                 <TaskBar />
-
-
             </div>
         </ZIndexProvider>
     );
